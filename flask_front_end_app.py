@@ -13,9 +13,9 @@ def index():
 def send_assets(path):
     return send_from_directory('app/assets/', path)
 
-@app.route('/api/v1.0/data/stress_test/', methods=['GET'])
-def get_conservation_data():
-	with open('app/assets/data/conservation.json') as data_file:
+@app.route('/assets/data/', methods=['GET'])
+def get_data():
+	with open('summer_conservation.json') as data_file:
 		return json.dumps(json.load(data_file))
 
 
