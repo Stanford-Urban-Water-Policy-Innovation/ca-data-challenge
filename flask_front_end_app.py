@@ -13,12 +13,6 @@ def index():
 def send_assets(path):
     return send_from_directory('app/assets/', path)
 
-@app.route('/assets/data/', methods=['GET'])
-def get_data():
-	with open('summer_conservation.json') as data_file:
-		return json.dumps(json.load(data_file))
-
-
 if __name__ == "__main__":
 	port = int(os.environ.get("PORT", 5050))
 	app.run(host='0.0.0.0', port=port, debug=False) # set debug=True if you want to have auto-reload on changes
