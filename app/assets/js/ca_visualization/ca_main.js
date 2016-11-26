@@ -15,7 +15,6 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
   // build dimensions
  
  	var region = cf.dimension(function(d){return d.hydrologic_region; });
-	var population = cf.dimension(function(d){return Math.ceil(d.population /10000) * 10000; });   
 	var conservation_taf = cf.dimension(function(d){return d.conservation/325851000; });
   	var conservation_per = cf.dimension(function(d){return Math.ceil(d.percent /0.05) * 0.05 * 100; });
   	var gpcd = cf.dimension(function(d){return Math.ceil((d.conservation + d.production_2013)/d.population/365/10) * 10; });
@@ -27,7 +26,6 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
   
   	var all = cf.groupAll();  
   	var region_suppliers_count = region.group().reduceCount();
-  	var population_by_supplier = population.group().reduceCount(function(d) {return d.population; });  
   	var conservation_taf_sum = region.group().reduceSum(function(d) {return d.conservation/325851000; }); 
   	var conservation_per_group = conservation_per.group();
   	var gpcd_group = gpcd.group();
@@ -50,7 +48,7 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
   
 	var suppliers_chart = dc
   		.pieChart("#suppliers_chart")
-		.width(500)
+		.width(300)
   		.height(300)
   		.radius(125)
   		.innerRadius(50)
@@ -59,38 +57,28 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
   		.group(region_suppliers_count)   
   		.renderLabel(true);
     
-	var population_chart = dc
-  		.barChart("#population_chart")
-    	.width(500)
-    	.height(300)
-    	.dimension(population)
-    	.group(population_by_supplier)
-    	.x(d3.scale.linear().domain([0,1000000]))
-    	.xUnits(dc.units.fp.precision(10000))
-    	.xAxisLabel("population")
-    	.yAxisLabel("number of suppliers");
-    
   	var aggregate_chart = dc
   		.barChart("#aggregate_chart")
-    	.width(250)
-    	.height(200)
+    	.width(300)
+    	.height(250)
     	.dimension(region)
     	.group(conservation_taf_sum)
     	.x(d3.scale.ordinal())
     	.xUnits(dc.units.ordinal)
     	.elasticY(true)
-		.margins({ top: 10, left: 30, right: 10, bottom: 50 })
-		.renderlet(function (aggregate_chart) {aggregate_chart.selectAll("g.x text").attr('dx', '-50').attr('transform', "rotate(-90)");});
+		.margins({ top: 10, left: 30, right: 10, bottom: 100 })
+		.renderlet(function (aggregate_chart) {aggregate_chart.selectAll("g.x text").attr('dx', '-50').attr('dy', '-5').attr('transform', "rotate(-90)");});
 
 	var percent_chart = dc
   		.barChart("#percent_chart")
-    	.width(250)
-    	.height(200)
+    	.width(300)
+    	.height(180)
     	.dimension(conservation_per)
     	.group(conservation_per_group)
     	.x(d3.scale.linear().domain([0,60]))
     	.xUnits(dc.units.fp.precision(5))
-    	.yAxisLabel("number of suppliers");  
+    	.yAxisLabel("number of suppliers")
+    	.xAxisLabel("%");  
   
   	var gpcd_chart = dc
   		.barChart("#gpcd_chart")
@@ -100,7 +88,8 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
     	.group(gpcd_group)
     	.x(d3.scale.linear().domain([0,1000]))
     	.xUnits(dc.units.fp.precision(10))
-    	.yAxisLabel("number of suppliers");
+    	.yAxisLabel("number of suppliers")
+    	.xAxisLabel("gallons per capita per day");
     
   	var rgpcd_chart = dc
   		.barChart("#rgpcd_chart")
@@ -110,17 +99,19 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
     	.group(rgpcd_group)
     	.x(d3.scale.linear().domain([0,1000]))
     	.xUnits(dc.units.fp.precision(10))
-    	.yAxisLabel("number of suppliers");
+    	.yAxisLabel("number of suppliers")
+    	.xAxisLabel("gallons per capita per day");
    
   	var residential_chart = dc
   		.barChart("#residential_chart")
-    	.width(250)
+    	.width(400)
     	.height(200)
     	.dimension(residential)
     	.group(residential_group)
     	.x(d3.scale.linear().domain([0,100]))
     	.xUnits(dc.units.fp.precision(5))
-    	.yAxisLabel("number of suppliers");
+    	.yAxisLabel("number of suppliers")
+    	.xAxisLabel("%");
 
    
   // ------------------------------------------------------------------
@@ -135,7 +126,6 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
     
     if(suppliers_count.filters().length > 0
     	|| suppliers_chart.filters().length >0
-      || population_chart.filters().length >0
       || aggregate_chart.filters().length >0
       || percent_chart.filters().length >0
       || gpcd_chart.filters().length >0
@@ -152,7 +142,6 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
           .on("click", function(){
               suppliers_count.filter(null);
               suppliers_chart.filter(null);
-              population_chart.filter(null);
               aggregate_chart.filter(null);
               percent_chart.filter(null);
               gpcd_chart.filter(null);
@@ -171,7 +160,6 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
 
   suppliers_count.on('filtered', function(){showButton();});
   suppliers_chart.on('filtered', function(){showButton();});
-  population_chart.on('filtered', function(){showButton();});
   aggregate_chart.on('filtered', function(){showButton();});
   percent_chart.on('filtered', function(){showButton();});
   gpcd_chart.on('filtered', function(){showButton();});  

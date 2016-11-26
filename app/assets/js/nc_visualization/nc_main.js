@@ -1,4 +1,4 @@
-d3.json("https://api.myjson.com/bins/47tg3", function(remote_json){
+d3.json("https://api.myjson.com/bins/4ukw3", function(remote_json){
 
   window.remote_json = remote_json;
   
@@ -123,6 +123,6 @@ d3.json("https://api.myjson.com/bins/47tg3", function(remote_json){
   suppliers_count.on('filtered', function(){showButton();});
   mandate_chart.on('filtered', function(){showButton();});
   conservation_chart.on('filtered', function(){showButton();});
-  water_days_chart.on('filtered', function(){showButton();});
+  water_days_chart.on('filtered', function(){showButton();});  
   rebound_chart.on('filtered', function(){showButton();});
 });         
