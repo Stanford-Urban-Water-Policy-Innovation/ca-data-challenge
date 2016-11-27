@@ -9,9 +9,13 @@ app = Flask(__name__, static_url_path='')
 def index():
     return app.make_response(open('app/index.html').read())
 
-@app.route('/<string:page_name>/')
-def render_static(page_name):
-    return render_template('%s.html' % page_name)  
+# @app.route('/', defaults={'page': 'index'})
+@app.route('/<page>')
+def html_lookup(page):
+    try:
+        return render_template('{}.html'.format(page))
+    except TemplateNotFound:
+        abort(404)
     
 @app.route('/assets/<path:path>')
 def send_assets(path):
