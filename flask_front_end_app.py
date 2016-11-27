@@ -12,6 +12,22 @@ def index():
 @app.route("/statewide.html")
 def statewide():
     return app.make_response(open('app/statewide.html').read())
+
+@app.route("/mandate.html")
+def mandate():
+    return app.make_response(open('app/mandate.html').read())
+
+@app.route("/rebound.html")
+def rebound():
+    return app.make_response(open('app/rebound.html').read())
+
+@app.route("/sfbay.html")
+def sfbay():
+    return app.make_response(open('app/sfbay.html').read())
+    
+@app.route("/northcoast.html")
+def northcoast():
+    return app.make_response(open('app/northcoast.html').read())    
     
 @app.route('/assets/<path:path>')
 def send_assets(path):
