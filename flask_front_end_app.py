@@ -5,11 +5,9 @@ from flask.ext import assets
 app = Flask(__name__, static_url_path='')
 
 # get root
-@app.route("/")
-def index():
-    return app.make_response(open('app/index.html').read())
 
-# @app.route('/', defaults={'page': 'index'})
+
+@app.route('/', defaults={'page': 'index'})
 @app.route('/<page>')
 def html_lookup(page):
     try:
