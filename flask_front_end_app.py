@@ -9,7 +9,7 @@ app = Flask(__name__, static_url_path='')
 def index():
     return app.make_response(open('app/index.html').read())
 
-@app.route("/statewide")
+@app.route("/statewide.html")
 def statewide():
     return app.make_response(open('app/statewide.html').read())
     
