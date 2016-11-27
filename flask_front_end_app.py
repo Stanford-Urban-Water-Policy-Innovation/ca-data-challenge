@@ -5,15 +5,13 @@ from flask.ext import assets
 app = Flask(__name__, static_url_path='')
 
 # get root
+@app.route("/")
+def index():
+    return app.make_response(open('app/index.html').read())
 
-
-@app.route('/', defaults={'page': 'index'})
-@app.route('/<page>')
-def html_lookup(page):
-    try:
-        return render_template('{}.html'.format(page))
-    except TemplateNotFound:
-        abort(404)
+@app.route("/statewide")
+def statewide():
+    return app.make_response(open('app/statewide.html').read())
     
 @app.route('/assets/<path:path>')
 def send_assets(path):
