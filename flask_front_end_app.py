@@ -1,5 +1,5 @@
 import os, copy, json, collections
-from flask import Flask, jsonify, request, send_from_directory, url_for, redirect, make_response
+from flask import Flask, jsonify, request, send_from_directory, url_for, redirect, make_response, render_template, abort
 from flask.ext.cors import CORS
 from flask.ext import assets
 app = Flask(__name__, static_url_path='')
@@ -9,25 +9,9 @@ app = Flask(__name__, static_url_path='')
 def index():
     return app.make_response(open('app/index.html').read())
 
-@app.route("/")
-def statewide():
-    return app.make_response(open('app/statewide.html').read())
-
-@app.route("/")
-def mandate():
-    return app.make_response(open('app/mandate.html').read())
-    
-@app.route("/")
-def rebound():
-    return app.make_response(open('app/rebound.html').read())
-    
-@app.route("/")
-def sfbay():
-    return app.make_response(open('app/sfbay.html').read())
-    
-@app.route("/")
-def northcoast():
-    return app.make_response(open('app/northcoast.html').read())    
+@app.route('/<string:page_name>/')
+def render_static(page_name):
+    return render_template('%s.html' % page_name)  
     
 @app.route('/assets/<path:path>')
 def send_assets(path):
