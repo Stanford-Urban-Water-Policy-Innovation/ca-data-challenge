@@ -1,4 +1,4 @@
-d3.json("https://api.myjson.com/bins/4ukw3", function(remote_json){
+d3.json("https://api.myjson.com/bins/58upv", function(remote_json){
 
   window.remote_json = remote_json;
   
@@ -17,7 +17,30 @@ d3.json("https://api.myjson.com/bins/4ukw3", function(remote_json){
   var all = cf.groupAll();
   var mandate_group = mandate.group().reduceCount();
   var conservation_group = date.group().reduceSum(function(d){return d.conservation_month_gal/325851000; });
-  var water_days_group = date.group().reduceSum(function(d){return d.water_days; });
+  var water_days_group = date.group().reduce(
+        /* callback for when data is added to the current filter results */
+        function (p, v) {
+            ++p.count;
+            p.total += v.water_days;
+            p.avg = d3.round((p.total / p.count),0);
+            return p;
+        },
+        /* callback for when data is removed from the current filter results */
+        function (p, v) {
+            --p.count;
+            p.total -= v.water_days;
+            p.avg = d3.round((p.total / p.count),0);
+            return p;
+        },
+        /* initialize p */
+        function () {
+            return {
+                count: 0,
+                total: 0,
+                avg: 0,
+            };
+        }
+    );
   var rebound_by_supplier = supplier.group().reduceSum(function(d){return d.backslide/9; });
 
   // unique name extraction
@@ -63,8 +86,9 @@ d3.json("https://api.myjson.com/bins/4ukw3", function(remote_json){
 		.height(260)
 		.dimension(date)
 		.group(water_days_group)
+		.valueAccessor(function(p) { return p.value.avg; })
 		.centerBar(true)
-		.yAxisLabel("Total number of days")
+		.yAxisLabel("Avg. number of days")
 		.x(d3.scale.ordinal())
 		.xUnits(dc.units.ordinal)
 		.elasticY(true)
@@ -73,7 +97,7 @@ d3.json("https://api.myjson.com/bins/4ukw3", function(remote_json){
 		 
   var rebound_chart = dc
   	.barChart("#rebound_chart")
-    .width(1000)
+    .width(2500)
     .height(400)
     .dimension(supplier)
     .group(rebound_by_supplier)
@@ -123,6 +147,6 @@ d3.json("https://api.myjson.com/bins/4ukw3", function(remote_json){
   suppliers_count.on('filtered', function(){showButton();});
   mandate_chart.on('filtered', function(){showButton();});
   conservation_chart.on('filtered', function(){showButton();});
-  water_days_chart.on('filtered', function(){showButton();});  
+  water_days_chart.on('filtered', function(){showButton();});
   rebound_chart.on('filtered', function(){showButton();});
 });         

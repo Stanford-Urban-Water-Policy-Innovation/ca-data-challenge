@@ -32,8 +32,6 @@
 				<!-- begin row -->
 				<div class="row">
 
-
-
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 					<!-- begin section: Navigation -->
 
@@ -79,18 +77,18 @@
 					</li>
                     <li class="active">
                         <a href="media.html">Media and the drought</a>
-                    </li>					                  
-                </ul>     
+                    </li>					                    
+                </ul>  
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
     </nav>
+ 
+
     
 					<!-- end section: navigaion -->
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 					
-					
-					
-					
+
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 					<!-- begin section: header -->
 					<br>
@@ -103,33 +101,53 @@
 					<!-- end section: header -->
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-					<!-- begin section: 2015 vs mandate c3js -->
+					<!-- begin section: SF Bay dcjs -->
+
 					<div class="col-xs-12 col-md-12">
 						<h3>
-							How well did California utilities do in summer 2015 compared to their mandated conservation targets?
+							Water conservation in the Central Coast Region
 						</h3>
-						<br>
-						<br>
-						
-						<div class="container-fluid" style="margin-top:10px;">
-  							<div class="row">
-    							<div class="col-md-8">
-      								<div id="chart1"></div>
-    							</div>
-    							<div class="col-md-4 well pull-right">
-      								<p id="message1"></p>
- 							 	</div>
+
+						<style>.dc_chart{ min-width: 250px; min-height: 250px; }</style>
+
+						<div style="float:left;">
+						<div style="float:left;" id="dcjs_reset_btn_container"> </div>
+
+						<div class="container-fluid">
+							<div class="col-md-12 well pull-right">							
+								<p> This is an interactive visualization of water conservation for utilities in the Central Coast Region during the summer months (June-August) of 2014, 2015, and 2016. These visualizations are linked together, so filtering data on one chart will update all the other charts</p>							
+								<p> Select a water supplier in the bottom graph to see how much water that utility saved each summer, and whether watering restrictions played a role in those savings</p>
+							</div>						
+						<div class="row">
+							<div style="float:left;">
+  								<h4>Conservation mandate</h4>
+  								<div id="mandate_chart"></div>
 							</div>
-						
-						<hr>
+
+							<div style="float:left;">
+  								<h4>Conservation over time (wrt 2013)</h4>
+  								<div id="conservation_chart"></div>
+							</div>
+							
+							<div style="float:left;">
+  								<h4>Watering days allowed per week</h4>
+  								<div id="water_days_chart"></div>
+							</div>							
+						</div> 
+
+						<div style="float:left;">
+  							<h4>Backslide</h4>
+  							<h4>% change in water use form summer 2015 to summer 2016</h4>
+  							<div id="rebound_chart"></div>
+  						</div>
+
 					</div>
+					<hr>
 
+					<!-- end section: SF Bay dcjs -->
+					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->					
 
-					<!-- end section: 2015 vs mandate c3js -->
-					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-					
 
 				</div>
 				<!-- end row -->
@@ -148,7 +166,7 @@
 	<!-- begin section: footer -->
 
 
-
+	
 	<!-- end section: footer -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
@@ -170,16 +188,10 @@
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
 		<!-- Visualization Libraries - End -->
-
-    	<!-- CA DCJS Visualization - Start -->
-    	<script src="assets/js/ca_visualization/ca_main.js"></script>
-    	<!-- CA DCJS Visualization - End -->
     	
-    	<!-- Mandate C3JS Visualization - Start -->
-    	<script src="assets/js/mandate_comparison/mandate_main.js"></script>
-    	<!-- Mandate C3JS Visualization - End -->    	
-
-    	
+    	<!-- SF Bay DCJS Visualization - Start -->
+    	<script src="assets/js/regional_visualizations/cc_main.js"></script>
+    	<!-- Rebound C3JS Visualization - End -->      	
 
     <!-- end section: JS Libraries -->
 

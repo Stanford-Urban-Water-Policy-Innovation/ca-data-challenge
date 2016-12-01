@@ -55,9 +55,9 @@
                     </li>                 
                     <li class="active">
                         <a href="statewide.html">Statewide water conservation</a>
-                    </li>                
+                    </li>                                  
                     <li class="active">
-                        <a href="mandate.html">2015 conservation mandate</a>
+                        <a href="mandate.html">2015 mandate</a>
                     </li>
                     <li class="active">
                         <a href="rebound.html">Conservation backslide in 2016</a>
@@ -67,16 +67,19 @@
 						<ul class="dropdown-content">
 							<a href="northcoast.html">North Coast</a>						
 							<a href="sfbay.html">San Francisco Bay</a>
-							<a href="#">Central Coast</a>
-							<a href="#">South Coast</a>	
-							<a href="#">Sacramento River</a>
-							<a href="#">San Joaquin Coast</a>
-							<a href="#">Tulare Lake</a>
-							<a href="#">North Lahontan</a>
-							<a href="#">South Lahontan</a>
-							<a href="#">Colorado River</a>																																																
+							<a href="centralcoast.html">Central Coast</a>
+							<a href="southcoast.html">South Coast</a>	
+							<a href="sacramentoriver.html">Sacramento River</a>
+							<a href="sanjoaquin.html">San Joaquin Coast</a>
+							<a href="tularelake.html">Tulare Lake</a>
+							<a href="northlahontan.html">North Lahontan</a>
+							<a href="southlahontan.html">South Lahontan</a>
+							<a href="coloradoriver.html">Colorado River</a>																																																
 						</ul>
-					</li>                    
+					</li>
+                    <li class="active">
+                        <a href="media.html">Media and the drought</a>
+                    </li>                 
                 </ul>  
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
@@ -109,23 +112,67 @@
 					<div class="col-xs-12 col-md-12">
 						<h2> Welcome! </h2>
 						<p>
-							This site contains interactive visualizations that allow the user to explore how effectively California water utilities conserved water over the past 3 years. By visualizing and exploring the relationships between water conservation in 2014, 2015, and 2016 in almost 400 utilities from around the state, we provide an interesting perspective on the ongoing drought.
+							This site contains interactive visualizations that allow the user to explore how effectively California water utilities conserved water over the past 3 years, a critical period of historical drought. By visualizing and exploring the relationships between water conservation in 2014, 2015, and 2016 in almost 400 utilities from around the state, we provide an interesting perspective of the ongoing drought.
 						</p>
 						<p>
 							In this exploratory analysis we include statewide data to show overall trends, as well as data for each of the 10 hydrologic regions in California, and individual utilities in those regions.
 						</p>
 						<p>
-							The comparison between conservation efforts in 2014, 2015, and 2016 also provide insight on the responsiveness of different utilities to different incentives: a voluntary call for conservation in 2014, a state mandate in 2015, and the replacement of the state mandate by utility-determined goals in 2016.
+							The comparison between conservation efforts in 2014, 2015, and 2016 also provide insight on the responsiveness of different utilities to different incentives: a voluntary call for conservation in 2014, a state mandate in 2015, and the replacement of the state mandate by adjusted self-certified goals in 2016.
 						</p>
-						<h2>Data</h2>
+						<br>
+						<h4>
+							Several key lessons can be drawn from these visualizations:
+						</h4>
+						<li> The reporting requirements put in place during the drought created an even platform for water utilities to keep track of important data, which in turn allows tools like this one to identify water use and conservation trends, drivers, and opportunities for enhanced water management at a variety of different scales. Further standardized tracking and reporting methods could facilitate the use of data for decision-making</li>
+						<br>
+						<li> Water utilities collectively achieved significant water savings in the period between 2014 and 2016. However, many uncertainties remain about the human-water dynamics that made those water savings possible. For example, though the drought received significant public attention after the Governor's State of Emergency Declaration in 2014, the voluntary call for conservation that summer did not spur significant changes in many service areas, in contrast to the high levels of conservation observed in 2015 in response to the mandatory water use restrictions. Similarly, a conservation backslide can already be observed in most water utilities this past summer, as soon as the mandatory restrictions were adjusted based on individual utility assessments of their water supply reliability </li>
+						<br>
+						<li> While policies and regulations seem to have been significant drivers of water conservation throughout the state (e.g. higher water savings during the state mandate or in response to local watering restrictions), each water utility responded differently. A better understanding of local population behaviors towards water use could help water planners and managers tailor their conservation campaigns more effectively in the future, not only during drought, but also as a long-term water reliability strategy</li>
+						
+						<br>
+						<h2> Authors </h2>
 						<p>
-							All data obtained from the <a href="http://www.waterboards.ca.gov/water_issues/programs/conservation_portal/emergency_regulation.shtml" target="_blank">State Water Resources Control Board (SWRCB) Water Conservation Portal - Emergency Conservation Regulation</a>.
+							This web tool was developed by the Urban Water Policy Group at Stanford University. 
+						</p>
+						<h4>Patricia Gonzales, PhD student</h4>
+						<p> Department of Civil and Environmental Engineering</p>
+						<p> Engineering Research Center for Re-Inventing the Nation's Urban Water Infrastructure (ReNUWIt)</p>
+						
+						<h4>Kim Quesnel, PhD student</h4>
+						<p> Department of Civil and Environmental Engineering</p>
+						<p> Engineering Research Center for Re-Inventing the Nation's Urban Water Infrastructure (ReNUWIt)</p>
+						
+						<h4> Newsha Ajami, Director of Urban Water Policy</h4>
+						<p>Woods Institute for the Environment</p>
+						<p>Engineering Research Center for Re-Inventing the Nation's Urban Water Infrastructure (ReNUWIt)</p>
+						
+						<img src="assets/images/stanford.png"/>
+						<img src="assets/images/renuwit.png"/>
+						<img src="assets/images/woods.png"/>
+				
+						<br>
+						<br>
+						<h2>Data</h2>
+						<h4> Water conservation data </h4>
+						<p>
+							All water conservation data was obtained from the <a href="http://www.waterboards.ca.gov/water_issues/programs/conservation_portal/emergency_regulation.shtml" target="_blank">State Water Resources Control Board (SWRCB) Water Conservation Portal - Emergency Conservation Regulation</a>, and pre-processed using the Pandas library in Python.
 						</p>
 						<p>
 							Only utilities who were required to report to the SWRCB, and who had complete data for the summers of 2014, 2015, and 2016 (June-August) are included in this analysis. This includes a total of 378 utilities form around the state. We use summer months for comparison between different years.
 						</p>
+						<h4> Media data </h4>
+						<p>
+							Media data was retrieved by a novel open-source algorithm written in Python by our group. The algorithm uses Google Custom Search Engine API to retrieve and tally news articles that contain terms of interest over a specified time period. For this visualization project we show the number of articles that contain the term “California drought” or a combination of “California”,” drought”, and a water-related term such as “water”, “snow”, or “rain”. Only articles from the following state and national newspapers (top 8 news sources by circulation) are included: Wall Street Journal, New York Times, USA Today, Los Angeles Times, Sacramento Bee, Orange County Register, San Diego Union-Tribune, San Francisco Chronicle (SF Gate).
+						</p>
+						<h4> Google trends data </h4>
+						<p>
+							Google trends data is used as a metric of public interest. Google Trends is a free online tool that shows how often a word or term is searched for over a certain period. The number of searches is in relative terms, with the period with the most searches for that topic having a value of 100. For a comparison between media coverage and public interest, we extracted data for how often the term “California Drought” was entered into the Google search bar over the period July 2005- June 2015 within the state of California. 
+						</p>
 
+						<br>
 						<h2>Visualizations</h2>
+						<p> All visualizations were initially prototyped in <a href="http://www.jsfiddle.net">jsfiddle </a></p>
 						<p>
 							Libraries used in these visualization include:
 							<ul>
@@ -146,7 +193,6 @@
 								</li>
 							</ul>
 						</p>						
-						<hr>
 					</div>
 
 					<!-- end section: About -->
@@ -168,6 +214,7 @@
 
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- begin section: footer -->
+
 
 
 	<!-- end section: footer -->
@@ -205,11 +252,11 @@
     	<!-- Rebound C3JS Visualization - End -->  
     	
     	<!-- SF Bay DCJS Visualization - Start -->
-    	<script src="assets/js/sfbay_visualization/sfbay_main.js"></script>
+    	<script src="assets/js/regional_visualizations/sfbay_main.js"></script>
     	<!-- Rebound C3JS Visualization - End -->   
     	
     	<!-- SF Bay DCJS Visualization - Start -->
-    	<script src="assets/js/nc_visualization/nc_main.js"></script>
+    	<script src="assets/js/regional_visualizations/nc_main.js"></script>
     	<!-- Rebound C3JS Visualization - End -->        	   	
 
     <!-- end section: JS Libraries -->
