@@ -54,7 +54,7 @@
                         <a href="index.html">About</a>
                     </li>                 
                     <li class="active">
-                        <a href="statewide.html">Statewide water conservation</a>
+                        <a href="statewide2.html">Statewide water use</a>
                     </li>                                      
                     <li class="active">
                         <a href="mandate.html">2015 mandate</a>
@@ -111,23 +111,41 @@
 					<br>
 					<br>
 					<div class="col-xs-12 col-md-12">
-						<p>Many factors played a role on how California water utilities and consumers responded to the drought. One important, and often overlooked factor, is how high media coverage during this critical period has impacted personal behaviors.</p>
-						<p>Click through the interactive story below to learn more about the relationship between media and public interest in the California drought</p>
+						<p>Many factors played a role on how California water utilities and consumers responded to the drought. One important, and often overlooked factor, is how political action and high media coverage during this critical period has impacted personal behaviors.</p>
+						<p>Click through the interactive stories below to learn more about the relationship between political action, media and public interest during the California drought</p>
 						<br>
+						<h3> There is a correlation between public interest in the drought and conservation levels achieved in the state </h3>
 						<br>
 					</div>
 					<div class="container-fluid" style="margin-top:10px;">
   						<div class="row">
     					<div class="col-md-8">
+      						<div id="google_chart"></div>
+    					</div>
+    					<div class="col-md-4 well pull-right">
+      						<h2>Measuring public interest through Google Searches</h2>
+      						<hr>
+      						<p id="message4"></p>
+      						<button id="start_btn2" class="btn btn-primary pull-right">Start</button>
+    					</div>
+  					</div>
+  					<br>
+					<div class="container-fluid" style="margin-top:10px;">
+					<h3> Media coverage played an important role in driving behavioral changes, by educating the public and raising awareness of critical conditions even before mandates were in place </h3>
+					<br>
+  						<div class="row">
+    					<div class="col-md-8">
       						<div id="media_chart"></div>
     					</div>
     					<div class="col-md-4 well pull-right">
-      						<h2>The California Drought: New Media Coverage and Google Searches</h2>
+      						<h2>New Media Coverage and Public interest</h2>
       						<hr>
       						<p id="message3"></p>
-      						<button id="start_btn" class="btn btn-primary pull-right">Start</button>
+      						<button id="start_btn1" class="btn btn-primary pull-right">Start</button>
     					</div>
-  						</div>
+  					</div>  						
+  						
+  						
   						<hr>
 					</div>
 
@@ -178,6 +196,7 @@
 
     	<!-- CA DCJS Visualization - Start -->
     	<script src="assets/js/media_visualization/media_main.js"></script>
+    	<script src="assets/js/media_visualization/google_main.js"></script>    	
     	<!-- CA DCJS Visualization - End -->
     	
 

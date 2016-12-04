@@ -32,6 +32,8 @@
 				<!-- begin row -->
 				<div class="row">
 
+
+
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 					<!-- begin section: Navigation -->
 
@@ -53,7 +55,7 @@
                     </li>                 
                     <li class="active">
                         <a href="statewide2.html">Statewide water use</a>
-                    </li>                                      
+                    </li>                                     
                     <li class="active">
                         <a href="mandate.html">2015 mandate</a>
                     </li>
@@ -77,18 +79,18 @@
 					</li>
                     <li class="active">
                         <a href="media.html">Media and the drought</a>
-                    </li>					                    
-                </ul>  
+                    </li> 					
+				</ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
     </nav>
- 
-
     
 					<!-- end section: navigaion -->
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 					
-
+					
+					
+					
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 					<!-- begin section: header -->
 					<br>
@@ -101,52 +103,31 @@
 					<!-- end section: header -->
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
+
+
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-					<!-- begin section: SF Bay dcjs -->
+					<!-- begin section: California c3js -->
 
 					<div class="col-xs-12 col-md-12">
+						<p> These are interactive visualizations of average water use per capita for all reporting utilities in California from January 2013 to September 2016. Water use in 2013 was used as a baseline to compute water savings in 2014-2016. State-mandated conservation goals were set based on residential water use per capita in 2013 and tailored to individual utilities baselines.</p>							
+						<p> *Missing data is due to the fact that utilities were only required to report water use starting in June 2014, and data was only available up to September 2016 at the time these graphs were generated. </p>
 						<h3>
-							Water conservation in the Colorado River Region
-						</h3>
+							Monthly water use per capita (gross)
+						</h3>					
+  						<br>
+  						<div id="statewide_chart"></div>
+  						<br>
+  						<h3>
+  							Monthly water use per capita (residential)
+  						</h3>
+  						<div id="statewide2_chart"></div>
 
-						<style>.dc_chart{ min-width: 250px; min-height: 250px; }</style>
-
-						<div style="float:left;">
-						<div style="float:left;" id="dcjs_reset_btn_container"> </div>
-
-						<div class="container-fluid">
-							<div class="col-md-12 well pull-right">							
-								<p> This is an interactive visualization of water conservation for utilities in the Colorado River Region during the summer months (June-August) of 2014, 2015, and 2016. These visualizations are linked together, so filtering data on one chart will update all the other charts</p>							
-								<p> Select a water supplier in the bottom graph to see how much water that utility saved each summer, and whether watering restrictions played a role in those savings</p>
-							</div>						
-						<div class="row">
-							<div style="float:left;">
-  								<h4>Conservation mandate</h4>
-  								<div id="mandate_chart"></div>
-							</div>
-
-							<div style="float:left;">
-  								<h4>Conservation over time (wrt 2013)</h4>
-  								<div id="conservation_chart"></div>
-							</div>
-							
-							<div style="float:left;">
-  								<h4>Watering days allowed per week</h4>
-  								<div id="water_days_chart"></div>
-							</div>							
-						</div> 
-
-						<div style="float:left;">
-  							<h4>Backslide</h4>
-  							<h4>% change in water use from summer 2015 to summer 2016</h4>
-  							<div id="rebound_chart"></div>
-  						</div>
-
+						<hr>
 					</div>
-					<hr>
 
-					<!-- end section: SF Bay dcjs -->
-					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->					
+					<!-- end section: California c3js -->
+					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
 
 
 				</div>
@@ -166,7 +147,6 @@
 	<!-- begin section: footer -->
 
 
-	
 	<!-- end section: footer -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
@@ -188,10 +168,23 @@
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
 		<!-- Visualization Libraries - End -->
+
+    	<!-- CA C3JS Visualization - Start -->
+    	<script src="assets/js/ca_visualization/statewide_main.js"></script>
+    	<script src="assets/js/ca_visualization/statewide2_main.js"></script>    	
+    	<!-- CA C3JS Visualization - End -->
+
+    	<!-- Mandate C3JS Visualization - Start -->
+    	<script src="assets/js/mandate_comparison/mandate_main.js"></script>
+    	<!-- Mandate C3JS Visualization - End -->    	
+
+    	<!-- Rebound C3JS Visualization - Start -->
+    	<script src="assets/js/rebound_comparison/rebound_main.js"></script>
+    	<!-- Rebound C3JS Visualization - End -->  
     	
     	<!-- SF Bay DCJS Visualization - Start -->
-    	<script src="assets/js/regional_visualizations/cr_main.js"></script>
-    	<!-- Rebound C3JS Visualization - End -->      	
+    	<script src="assets/js/regional_visualizations/sfbay_main.js"></script>
+    	<!-- Rebound C3JS Visualization - End -->   
 
     <!-- end section: JS Libraries -->
 

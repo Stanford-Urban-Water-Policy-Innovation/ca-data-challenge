@@ -34,7 +34,7 @@ var my_chart_parameters = {
   },
 	"axis": {
 		"x": {
-    	"label": "Conservation in summer 2015",
+    	"label": "Conservation in summer 2015 (% wrt 2013)",
       "min": 0,
       "max": 60,
 			"tick": {
@@ -42,7 +42,7 @@ var my_chart_parameters = {
        }
 		},
     "y": {
-    	"label": "Conservation in summer 2016 (%)",
+    	"label": "Conservation in summer 2016 (% wrt 2013)",
       "min":0,
       "max":60,
     }

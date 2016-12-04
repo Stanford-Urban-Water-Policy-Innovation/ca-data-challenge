@@ -14,9 +14,9 @@ def index():
 def about():
     return app.make_response(open('app/index.html').read())
 
-@app.route("/statewide.html")
-def statewide():
-    return app.make_response(open('app/statewide.html').read())
+@app.route("/statewide2.html")
+def statewide2():
+    return app.make_response(open('app/statewide2.html').read())
     
 @app.route("/media.html")
 def media():
