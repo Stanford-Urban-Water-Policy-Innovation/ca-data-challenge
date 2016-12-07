@@ -15,7 +15,27 @@ d3.json("https://api.myjson.com/bins/1igr7", function(remote_json){
 
 	// groups 
   var all = cf.groupAll();
-  var mandate_group = mandate.group().reduceCount();
+  var mandate_group = mandate.group().reduce(
+        /* callback for when data is added to the current filter results */
+        function (p, v) {
+            ++p.count;
+            p.avg = (p.count / 9);
+            return p;
+        },
+        /* callback for when data is removed from the current filter results */
+        function (p, v) {
+            --p.count;
+            p.avg = (p.count / 9);
+            return p;
+        },
+        /* initialize p */
+        function () {
+            return {
+                count: 0,
+                avg: 0,
+            };
+        }  
+  );
   var conservation_group = date.group().reduceSum(function(d){return d.conservation_month_gal/325851000; });
   var water_days_group = date.group().reduce(
         /* callback for when data is added to the current filter results */
@@ -60,6 +80,7 @@ d3.json("https://api.myjson.com/bins/1igr7", function(remote_json){
     .height(200)
     .dimension(mandate)
     .group(mandate_group)
+    .valueAccessor(function(p) { return p.value.avg; })
     .yAxisLabel("number of suppliers")
     .xAxisLabel("(%)")
     .x(d3.scale.linear().domain([0,60]))
