@@ -114,7 +114,12 @@
 						</h3>
 						<p> This is an interactive visualization of water conservation for all reporting utilities in California during June 2015 - May 2016 while the state mandate was in effect. State-mandated conservation goals were set based on residential water use per capita in 2013 and tailored to individual utilities' baselines. Thus, for all visualizations in this web application, water use in 2013 was used as a baseline to compute water savings in 2014-2016. </p>
 						<p> These visualizations are linked together, so filtering data on one chart will update all the other charts. </p>
-						<br>
+
+						<style>.dc_chart{ min-width: 250px; min-height: 250px; }</style>
+
+						<div style="float:left;">
+						<div style="float:left;" id="dcjs_reset_btn_container"> </div>
+						<br>						
 						<h4>Number of suppliers displayed</h4>
 						<div id="suppliers_count"></div>
 						<br>
@@ -142,20 +147,20 @@
 						</h3>						
 						<p> These are interactive visualizations of average water use per capita for all reporting utilities in California from January 2013 to September 2016.</p>
   						<p>
-  							As shown in the graph above, water use in California is highly seasonal, with higher outdoor water use during the summer months. This seasonality also helped many utilities achieve high water conservation levels by regulating outdoor irrigation during the summer.  
+  							As shown in the graph below, water use in California is highly seasonal, with higher outdoor water use during the summer months. This seasonality also helped many utilities achieve high water conservation levels by regulating outdoor irrigation during the summer.  
   						</p>													
-						<h3>
+						<h4>
 							Monthly water use per capita (residential)
-						</h3>					
+						</h4>					
   						<br>
   						<div id="statewide2_chart"></div>
   						<br>
   						<p>
   							Furthermore, the graph below shows that even summer (June-August) water use per capita in the residential sector shows high location-specific variability. Some of the regions that had a higher water use per capita at the beginning of the drought (2013) were able to achieve high conservation levels during the mandate, but water use levels are already starting to bounce back in some places. Local water use characteristics play an important role in how much water conservation each community is able to achieve, and whether these savings will continue onto the future.
   						</p>
-  						<h3>
+  						<h4>
   							Summer water use per capita by hydrologic region (residential)
-  						</h3>
+  						</h4>
   						<div id="statewide2_regions_chart"></div>
 
 						<hr>
@@ -214,17 +219,7 @@
     	<script src="assets/js/ca_visualization/statewide2_regions_main.js"></script>    	
     	<!-- CA C3JS Visualization - End -->
 
-    	<!-- Mandate C3JS Visualization - Start -->
-    	<script src="assets/js/mandate_comparison/mandate_main.js"></script>
-    	<!-- Mandate C3JS Visualization - End -->    	
 
-    	<!-- Rebound C3JS Visualization - Start -->
-    	<script src="assets/js/rebound_comparison/rebound_main.js"></script>
-    	<!-- Rebound C3JS Visualization - End -->  
-    	
-    	<!-- SF Bay DCJS Visualization - Start -->
-    	<script src="assets/js/regional_visualizations/sfbay_main.js"></script>
-    	<!-- Rebound C3JS Visualization - End -->   
 
     <!-- end section: JS Libraries -->
 
