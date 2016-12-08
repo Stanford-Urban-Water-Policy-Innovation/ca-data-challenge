@@ -15,6 +15,7 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
   // build dimensions
  
  	var region = cf.dimension(function(d){return d.hydrologic_region; });
+ 	var region2 = cf.dimension(function(d){return d.hydrologic_region; });
 	var conservation_taf = cf.dimension(function(d){return d.conservation/325851000; });
   	var conservation_per = cf.dimension(function(d){return Math.ceil(d.percent /0.05) * 0.05 * 100; });
   	var gpcd = cf.dimension(function(d){return Math.ceil((d.conservation + d.production_2013)/d.population/365/10) * 10; });
@@ -53,7 +54,7 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
   		.radius(125)
   		.innerRadius(50)
     	.minAngleForLabel(0)
-  		.dimension(region)
+  		.dimension(region2)
   		.group(region_suppliers_count)   
   		.renderLabel(true);
     
@@ -72,11 +73,12 @@ d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
 	var percent_chart = dc
   		.barChart("#percent_chart")
     	.width(300)
-    	.height(180)
+    	.height(250)
     	.dimension(conservation_per)
     	.group(conservation_per_group)
     	.x(d3.scale.linear().domain([0,60]))
     	.xUnits(dc.units.fp.precision(5))
+    	.elasticY(true)
     	.yAxisLabel("number of suppliers")
     	.xAxisLabel("%");  
   

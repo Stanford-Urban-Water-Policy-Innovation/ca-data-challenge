@@ -109,17 +109,47 @@
 					<!-- begin section: California c3js -->
 
 					<div class="col-xs-12 col-md-12">
-						<p> These are interactive visualizations of average water use per capita for all reporting utilities in California from January 2013 to September 2016. State-mandated conservation goals were set based on residential water use per capita in 2013 and tailored to individual utilities' baselines. Thus, for all visualizations in this web application, water use in 2013 was used as a baseline to compute water savings in 2014-2016.</p>							
-						<p> *Only data from June 2014 to September 2016 was available at the time these graphs were generated. </p>
+						<h3>
+							CA utilities: conservation June 2015 - May 2016
+						</h3>
+						<p> This is an interactive visualization of water conservation for all reporting utilities in California during June 2015 - May 2016 while the state mandate was in effect. State-mandated conservation goals were set based on residential water use per capita in 2013 and tailored to individual utilities' baselines. Thus, for all visualizations in this web application, water use in 2013 was used as a baseline to compute water savings in 2014-2016. </p>
+						<p> These visualizations are linked together, so filtering data on one chart will update all the other charts. </p>
+						<br>
+						<h4>Number of suppliers displayed</h4>
+						<div id="suppliers_count"></div>
+						<br>
+						<div class="row">
+							<div class="col-md-4">
+  								<h4>Suppliers by Region</h4>
+  								<div id="suppliers_chart"></div>
+							</div>
+
+							<div class="col-md-4">
+  								<h4>Aggregate conservation</h4>
+  								<h5>[Thousand Acre-Feet]</h5>
+  								<div id="aggregate_chart"></div>
+							</div>
+
+							<div class="col-md-4">
+  								<h4>Percent conservation</h4>
+  								<h5> With respect to 2013 water use</h5>
+  								<div id="percent_chart"></div>
+							</div>
+						</div>
+						<br>
+						<h3>
+							CA utilities: conservation June 2014 - September 2016
+						</h3>						
+						<p> These are interactive visualizations of average water use per capita for all reporting utilities in California from January 2013 to September 2016.</p>
+  						<p>
+  							As shown in the graph above, water use in California is highly seasonal, with higher outdoor water use during the summer months. This seasonality also helped many utilities achieve high water conservation levels by regulating outdoor irrigation during the summer.  
+  						</p>													
 						<h3>
 							Monthly water use per capita (residential)
 						</h3>					
   						<br>
   						<div id="statewide2_chart"></div>
   						<br>
-  						<p>
-  							As shown in the graph above, water use in California is highly seasonal, with higher outdoor water use during the summer months. This seasonality also helped many utilities achieve high water conservation levels by regulating outdoor irrigation during the summer.  
-  						</p>
   						<p>
   							Furthermore, the graph below shows that even summer (June-August) water use per capita in the residential sector shows high location-specific variability. Some of the regions that had a higher water use per capita at the beginning of the drought (2013) were able to achieve high conservation levels during the mandate, but water use levels are already starting to bounce back in some places. Local water use characteristics play an important role in how much water conservation each community is able to achieve, and whether these savings will continue onto the future.
   						</p>
@@ -175,6 +205,10 @@
 
 		<!-- Visualization Libraries - End -->
 
+    	<!-- CA DCJS Visualization - Start -->
+    	<script src="assets/js/ca_visualization/ca_main.js"></script>
+    	<!-- CA DCJS Visualization - End -->
+    	
     	<!-- CA C3JS Visualization - Start -->
     	<script src="assets/js/ca_visualization/statewide2_main.js"></script>
     	<script src="assets/js/ca_visualization/statewide2_regions_main.js"></script>    	
