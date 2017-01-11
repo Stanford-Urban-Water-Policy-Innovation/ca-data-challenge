@@ -8,7 +8,6 @@ d3.json("https://api.myjson.com/bins/58upv", function(remote_json){
   // dimensions
   var supplier = cf.dimension(function(d){return d.supplier_name; });
  	var mandate = cf.dimension(function(d){return Math.ceil(d.mandate/5)*5; });
-  var conservation = cf.dimension(function(d){return d.conservation_month_gal/325851000; });
   var date = cf.dimension(function(d){return d.date; });
   var water_days = cf.dimension(function(d){return d.water_days; });
   var rebound = cf.dimension(function(d){return d.backslide; });
@@ -36,7 +35,30 @@ d3.json("https://api.myjson.com/bins/58upv", function(remote_json){
             };
         }  
   );
-  var conservation_group = date.group().reduceSum(function(d){return d.conservation_month_gal/325851000; });
+  var conservation_group = date.group().reduce(
+        /* callback for when data is added to the current filter results */
+  		function(p,v){
+  			p.conservation += v.conservation_month_gal;
+  			p.ref += v.production_2013;
+  			p.percent = d3.round((p.conservation / p.ref)*100,2);
+  			return p; 
+  		},
+        /* callback for when data is removed from the current filter results */  		
+  		function(p,v){
+  			p.conservation -= v.conservation_month_gal;
+  			p.ref -= v.production_2013;
+  			p.percent = d3.round((p.conservation / p.ref)*100,2);
+  			return p;
+  		},
+        /* initialize p */  		
+  		function () {
+  			return {
+  				conservation: 0,
+  				ref: 0,
+  				percent: 0,
+  			};
+  		}
+  );
   var water_days_group = date.group().reduce(
         /* callback for when data is added to the current filter results */
         function (p, v) {
@@ -93,11 +115,12 @@ d3.json("https://api.myjson.com/bins/58upv", function(remote_json){
     .height(260)
     .dimension(date)
     .group(conservation_group)
+    .valueAccessor(function(p) { return p.value.percent; })
     .centerBar(true)
     .x(d3.scale.ordinal())
     .xUnits(dc.units.ordinal)
     .elasticY(true)
-    .yAxisLabel("Thousand AF")
+    .yAxisLabel("% wrt 2013")
     .margins({ top: 10, left: 50, right: 10, bottom: 100 })
 		.renderlet(function (conservation_chart){conservation_chart.selectAll("g.x text").attr('dx', '-50').attr('dy', '-5').attr('transform', "rotate(-90)");});
     
