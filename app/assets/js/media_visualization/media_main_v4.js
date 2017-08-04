@@ -53,16 +53,16 @@ var media_chart = c3.generate({
 
 var slide_00 = function() {
   media_chart.focus("Searches");
-  document.getElementById("message3").innerHTML = "In the previous visualization, we used Google searches to examine how public interest in the California drought has evolved over time is related to water conservation.";
+  document.getElementById("message3").innerHTML = "In the previous visualization, we used Google searches to examine how drought-related public interest evolved in California during the recent historic drought.";
 };
 
 var slide_01 = function() {
   media_chart.focus("Articles");
-  document.getElementById("message3").innerHTML = "In this visualization, we look at one factor associated with increased public interest: heightened news media coverage of the state's water crisis.";
+  document.getElementById("message3").innerHTML = "In this visualization, we look at one factor associated with this increased public awareness: heightened news media coverage of the state's water crisis.";
 };
 
 var slide_02 = function() {
-  document.getElementById("message3").innerHTML = "Here we use monthly data of the relative Google search rates for the term 'California Drought' and the volume of newspaper articles written about the drought from 8 news sources.";
+  document.getElementById("message3").innerHTML = "To quantify media coverage, we use the Articulate algorithm to extract the number of newspaper articles written about the California drought from 8 national and state news sources.";
 };
 
 var slide_03 = function() {
@@ -73,18 +73,18 @@ var slide_04 = function() {
  media_chart.regions([{
    start: '1/1/2014'
   }]);
-  document.getElementById("message3").innerHTML = "Increased public interest as approximated by Google Searches and heightened news media coverage started at the same time, in January 2014.";
+  document.getElementById("message3").innerHTML = "Like Google searches and public interest, heightened news media coverage started in January 2014.";
 };
 
 var slide_05 = function() {
 	media_chart.regions([]);
-  document.getElementById("message3").innerHTML = "Similarly, the peaks of public interest and news media coverage occur during the same months.";
+  document.getElementById("message3").innerHTML = "We also see the same peaks for news media coverage as for Google search frequencies:";
 };
 
 var slide_06 = function() {
   media_chart.select(["Articles"], [24]);
   media_chart.select(["Searches"], [24]);
-  document.getElementById("message3").innerHTML = "When Governor Jerry Brown declared a drought Sate of Emergency in January 2014";
+  document.getElementById("message3").innerHTML = "When Governor Jerry Brown declared a drought Sate of Emergency in January 2014;";
 };
 
 var slide_07 = function() {
@@ -94,7 +94,7 @@ var slide_07 = function() {
 var slide_08 = function() {
   media_chart.select(["Articles"], [30]);
   media_chart.select(["Searches"], [31]);
-  document.getElementById("message3").innerHTML = "In late July/early August 2014 when the State Water Board enacted an emergency regulation targeting oudoor urban water use in an effort to increase conservation practices for all Californians";
+  document.getElementById("message3").innerHTML = "In late July/early August 2014 when the State Water Board enacted an emergency regulation targeting oudoor urban water use in an effort to increase conservation practices for all Californians;";
 };
 
 var slide_09 = function() {
@@ -104,7 +104,7 @@ var slide_09 = function() {
 var slide_010 = function() {
   media_chart.select(["Articles"], [39]);
   media_chart.select(["Searches"], [39]);
-  document.getElementById("message3").innerHTML = "And the largest peak in April 2015 when Governor Brown declared the first ever madatory statewide water conservation restrictions";
+  document.getElementById("message3").innerHTML = "In April 2015 when Governor Brown declared the first ever madatory statewide water conservation restrictions;";
 };
 
 var slide_011 = function() {
@@ -114,7 +114,7 @@ var slide_011 = function() {
 var slide_012 = function() {
   media_chart.select(["Articles"], [35]);
   media_chart.select(["Searches"], [35]);
-  document.getElementById("message3").innerHTML = "We see one other peak in this analysis as well: In December 2014 during an intense rain event, with many articles speculating whether or not the drought was over.";
+  document.getElementById("message3").innerHTML = "And in December 2014 during an intense rain event, with many articles speculating whether or not the drought was over.";
 };
 
 var slide_013 = function() {
@@ -125,7 +125,7 @@ var slide_014 = function() {
 	media_chart.regions([{
 		start: '1/1/2016'
   }]);
-  document.getElementById("message3").innerHTML = "Then, in 2016 when many agencies across the state experienced conservation backslide, we also see declining media coverage and public interest as well.";
+  document.getElementById("message3").innerHTML = "Then, in 2016 as many water agencies across the state started to experience conservation backslide, media coverage and public interest declined as well.";
 };
 
 
@@ -137,7 +137,7 @@ var slide_015 = function() {
 
 var slide_016 = function() {
   media_chart.unselect();
-  document.getElementById("message3").innerHTML = "This relationship offers an opportunity to water agencies to design more effective ongoing outreach programs and campaigns in order to enhance public awareness and educate public  about their water supply sources.";
+  document.getElementById("message3").innerHTML = "Water agencies can put these insights to action by designing more effective ongoing outreach programs and campaigns that enhance public awareness and educate public about their water supply sources.";
 };
 
 var slides2 = [slide_00, slide_01, slide_02, slide_03, slide_04, slide_05, slide_06, slide_07, slide_08, slide_09, slide_010, slide_011, slide_012, slide_013, slide_014, slide_015, slide_016];

@@ -67,12 +67,12 @@ var slide_3 = function() {
 
 var slide_4 = function() {
 	chart.regions([]);
-  document.getElementById("message4").innerHTML = "During this time period, the three times when Californians were most interested in the drought occurred during distinct political actions in 2014 and 2015:";
+  document.getElementById("message4").innerHTML = "During this time period, the four times when Californians were most interested in the drought occurred during distinct political actions in 2014 and 2015:";
 };
 
 var slide_5 = function() {
   chart.select(["Searches"], [107]);
-  document.getElementById("message4").innerHTML = "1. The public first became interested in the drought in January 2014 when Governor Jerry Brown declared a drought Sate of Emergency.";
+  document.getElementById("message4").innerHTML = "The public first became interested in the drought in January 2014 when Governor Jerry Brown declared a drought Sate of Emergency.";
 };
 
 var slide_6 = function() {
@@ -81,7 +81,7 @@ var slide_6 = function() {
 
 var slide_7 = function() {
   chart.select(["Searches"], [137]);
-  document.getElementById("message4").innerHTML = "2. Interest surged next in early August 2014 after the State Water Board enacted an emergency regulation targeting oudoor urban water use in an effort to increase conservation practices for all Californians.";
+  document.getElementById("message4").innerHTML = "Interest surged next in early August 2014 after the State Water Board enacted an emergency regulation targeting oudoor urban water use in an effort to increase conservation practices for all Californians.";
 };
 
 var slide_8 = function() {
@@ -90,15 +90,24 @@ var slide_8 = function() {
 
 var slide_9 = function() {
   chart.select(["Searches"], [170]);
-  document.getElementById("message4").innerHTML = "3. Finally, the highest volume of searches occurred in April 2015 when Governor Brown declared the first ever madatory statewide water conservation restrictions.";
+  document.getElementById("message4").innerHTML = "Then, the highest volume of searches occurred in April 2015 when Governor Brown declared the first ever madatory statewide water conservation restrictions.";
 };
 
 var slide_10 = function() {
   chart.unselect();
-  document.getElementById("message4").innerHTML = "These search frequencies show that the public was aware of and interested in state-level drought-related political actions.";
 };
 
 var slide_11 = function() {
+  chart.select(["Searches"], [153]);
+  document.getElementById("message4").innerHTML = "We also see a high search volume in December 2014 during a rain event when many Californians speculated if the drought was over.";
+};
+
+var slide_12 = function() {
+  chart.unselect();
+  document.getElementById("message4").innerHTML = "These search frequencies show that the public was aware of and interested in state-level drought-related political actions.";
+};
+
+var slide_13 = function() {
  chart.regions([
    {start: '6/1/14', end:'8/31/14'},
    {start: '6/7/15', end: '8/30/15'},
@@ -115,16 +124,16 @@ var slide_11 = function() {
   document.getElementById("message4").innerHTML = "Next, we examine Google searches during the summers of 2014, 2015, and 2016 to see how public interest levels match water conservation levels.";
 };
 
-var slide_12 = function() {
+var slide_14 = function() {
 	chart.select(["Searches"], [132, 185, 237]);
   document.getElementById("message4").innerHTML = "Of the three summers, public interest was highest in the summer of 2015, the same summer that the highest levels of conservation were achieved. Public interest was lowest in the summer of 2016, matching the conservation backslide patterns shown by water use data.";
 };
 
-var slide_13 = function() {
+var slide_15 = function() {
   chart.unselect();
 };
 
-var slide_14 = function() {
+var slide_16 = function() {
   chart.regions([]);
   chart.axis.range({
   min: {
@@ -137,7 +146,7 @@ var slide_14 = function() {
   document.getElementById("message4").innerHTML = "This visualization provides two novel insights into water conservation behavior: (1) High-level political actions have the potential to engage the public and (2) This increased public interest is related to increased water conservation.";
 };
 
-var slides = [slide_0, slide_1, slide_2, slide_3, slide_4, slide_5, slide_6, slide_7, slide_8, slide_9, slide_10, slide_11, slide_12, slide_13, slide_14];
+var slides = [slide_0, slide_1, slide_2, slide_3, slide_4, slide_5, slide_6, slide_7, slide_8, slide_9, slide_10, slide_11, slide_12, slide_13, slide_14, slide_15, slide_16;
 
 // cycle through slides
 
