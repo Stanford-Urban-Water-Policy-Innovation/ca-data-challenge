@@ -146,7 +146,7 @@ var slide_16 = function() {
   document.getElementById("message4").innerHTML = "This visualization provides two novel insights into water conservation behavior: (1) High-level political actions have the potential to engage the public and (2) This increased public interest is related to increased water conservation.";
 };
 
-var slides = [slide_0, slide_1, slide_2, slide_3, slide_4, slide_5, slide_6, slide_7, slide_8, slide_9, slide_10, slide_11, slide_12, slide_13, slide_14, slide_15, slide_16;
+var slides = [slide_0, slide_1, slide_2, slide_3, slide_4, slide_5, slide_6, slide_7, slide_8, slide_9, slide_10, slide_11, slide_12, slide_13, slide_14, slide_15, slide_16];
 
 // cycle through slides
 
