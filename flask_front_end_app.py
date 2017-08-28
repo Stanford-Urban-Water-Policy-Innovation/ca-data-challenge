@@ -69,6 +69,10 @@ def southlahontan():
 @app.route("/coloradoriver.html")
 def coloradoriver():
     return app.make_response(open('app/coloradoriver.html').read())
+
+@app.route("/googlef77eca0a5ee5d935.html")
+def googlef77eca0a5ee5d935():
+	return app.make_response(open('app/googlef77eca0a5ee5d935.html').read())
       
 @app.route('/assets/<path:path>')
 def send_assets(path):
