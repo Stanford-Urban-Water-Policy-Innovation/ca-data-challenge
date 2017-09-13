@@ -71,7 +71,7 @@ var slide = function(){
      ],
     type: "line",
   });
-  document.getElementById("message3").innerHTML = "Hover over the scatter plot to see how each individual is doing. In this interactive plot, dots under the 1:1 line represent utilities with higher water use in summer 2016 compared to June 2017, and dots above the line represent utilities that are on their way to surpass their summer 2016 conservation levels "  
+  document.getElementById("message3").innerHTML = "Hover over the scatter plot to see how each individual is doing. In this interactive plot, dots under the 1:1 line represent utilities with higher conservation in summer 2016 compared to June 2017, and dots above the line represent utilities that are on their way to surpass their summer 2016 conservation levels "  
 };
 
 slide();
