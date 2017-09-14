@@ -256,6 +256,7 @@ header .header-content .header-content-inner p {
 .navbar-default .nav>li.active>a:focus {
     color: rgba(255,255,255,.7);
     background-color: #000;
+    border: 1px solid #555
 }
 
 .navbar-default .nav > li.active>a:hover,
