@@ -32,6 +32,8 @@
 				<!-- begin row -->
 				<div class="row">
 
+
+
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 					<!-- begin section: Navigation -->
 
@@ -47,10 +49,10 @@
                 </button>
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">  
                     <li class="active">
                         <a href="home.html">Home</a>
-                    </li>
+                    </li>       
 					<li class="dropdown">
 						<button class="dropbtn">Conservation by region </button>
 						<ul class="dropdown-content">
@@ -65,10 +67,10 @@
 							<a href="southlahontan.html">South Lahontan</a>
 							<a href="coloradoriver.html">Colorado River</a>																																																
 						</ul>
-					</li>                                     
+					</li>                                            
                     <li class="active">
                         <a href="statewide2.html">Statewide water use</a>
-                    </li>                                      
+                    </li>                                  
                     <li class="active">
                         <a href="mandate.html">2015 mandate</a>
                     </li>
@@ -77,10 +79,10 @@
                     </li>                    
                     <li class="active">
                         <a href="media.html">Media and the drought</a>
-                    </li>	
+                    </li>
                     <li class="active">
                         <a href="index.html">About</a>
-                    </li>                     				                    
+                    </li>                                      
                 </ul>  
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
@@ -91,7 +93,9 @@
 					<!-- end section: navigaion -->
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 					
-
+					
+					
+					
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 					<!-- begin section: header -->
 					<br>
@@ -110,54 +114,59 @@
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-					<!-- begin section: SF Bay dcjs -->
-
-					<div class="col-xs-12 col-md-12">
-						<hr>
-						<h3>
-							Water conservation in the San Joaquin River Region
-						</h3>
-
-						<style>.dc_chart{ min-width: 250px; min-height: 250px; }</style>
-
-						<div style="float:left;">
-						<div style="float:left;" id="dcjs_reset_btn_container"> </div>
-
-						<div class="container-fluid">	
-							<p> * All % conservation levels	are with respect to baseline water use in 2013 </p>	
-							
-						<div style="float:left;">
-  							<h4>Backslide</h4>
-  							<h4>% change in water use from summer 2015 to summer 2016</h4>
-  							<div id="rebound_chart"></div>
-  						</div>
-  																										
-						<div class="row">
-							<div style="float:left;">
-  								<h4>Conservation mandate</h4>
-  								<div id="mandate_chart"></div>
-							</div>
-
-							<div style="float:left;">
-  								<h4>Conservation over time (wrt 2013)</h4>
-  								<div id="conservation_chart"></div>
-							</div>
-							
-							<div style="float:left;">
-  								<h4>Watering days allowed per week</h4>
-  								<div id="water_days_chart"></div>
-							</div>							
-						</div> 
-							<div class="col-md-12 well pull-right">							
-								<p> This is an interactive visualization of water conservation for utilities in the San Joaquin River Region during the summer months (June-August) of 2014, 2015, and 2016. These visualizations are linked together, so filtering data on one chart will update all the other charts</p>							
-								<p> Select a water supplier in the top graph to see how much water that utility saved each summer, and whether watering restrictions played a role in those savings</p>
-							</div>
-							
-					</div>
+					<!-- begin section: Home -->
 					<hr>
+					
+					<h4> This interactive web portal shows how effectively California water utilities conserved water over 2014-16, a critical period of historic drought, as well as the first half of 2017 now that drought restrictions have been lifted. </h4>
+					<br>
+					
+					<div class="col-xs-3 col-md-3">
+						<img src="assets/images/CA_HR.png" width="500" height="560"/>					
+					</div>
+					
+					<div class="col-xs-3 col-md-3">
+						<h3> Explore how much water utilities conserved in your region </h3>
+					</div>
+					<div class="col-xs-3 col-md-3">
+						<br>
+						<br>
+						<br>
+						<br>
+						<li> <a href="northcoast.html">North Coast </a></li>
+						<li> <a href="sfbay.html">San Francisco Bay </a></li>
+						<li> <a href="centralcoast.html">Central Coast </a></li>
+						<li> <a href="southcoast.html">South Coast </a></li>
+						<li> <a href="sacramentoriver.html">Sacramento River </a></li>
+						<li> <a href="sanjoaquin.html">San Joaquin River </a></li>
+						<li> <a href="tularelake.html">Tulare Lake </a></li>
+						<li> <a href="northlahontan.html">North Lahontan </a></li>
+						<li> <a href="southlahontan.html">South Lahontan </a></li>
+						<li> <a href="coloradoriver.html">Colorado River </a></li>
+					</div>
+					<div class="col-xs-3 col-md-3">
+						<h3> See also </h3>
+						<a href="statewide2.html"> 
+						<p> Statewide water use trends </p>
+						<img src="assets/images/Fig1.png" width="230" height="75">
+						</a>
+						<a href="mandate.html"> 
+						<p> Water conservation during the 2015 mandate </p>
+						<img src="assets/images/Fig2.png" width="230" height="75">
+						</a>
+						<a href="rebound.html">
+						<p> Water conservation backsliding in 2016 and 2017 </p>
+						<img src="assets/images/Fig3.png" width="230" height="75">
+						</a>
+						<a href="media.html">
+						<p> Effects of newsmedia on water conservation </p>
+						<img src="assets/images/Fig4.png" width="230" height="75"> 
+						</a>
+					</div>					
 
-					<!-- end section: SF Bay dcjs -->
-					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->					
+
+
+					<!-- end section: Home -->
+					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 
 				</div>
@@ -206,12 +215,7 @@
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
 		<!-- Visualization Libraries - End -->
-    	
-    	<!-- SF Bay DCJS Visualization - Start -->
-    	<script src="assets/js/regional_visualizations/sjc_main.js"></script>
-    	<!-- Rebound C3JS Visualization - End -->      	
 
-    <!-- end section: JS Libraries -->
 
 	
 

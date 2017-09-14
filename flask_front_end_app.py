@@ -6,13 +6,17 @@ app = Flask(__name__, static_url_path='')
 
 # get root
 @app.route("/")
-def index():
-    return app.make_response(open('app/index.html').read())
+def home():
+    return app.make_response(open('app/home.html').read())
 
 # get sub-sites
+@app.route("/home.html")
+def home():
+	return app.make_response(open('app/home.html').read())
+	
 @app.route("/index.html")
 def about():
-    return app.make_response(open('app/index.html').read())
+    return app.make_response(open('app/index.html').read())	
 
 @app.route("/statewide2.html")
 def statewide2():
