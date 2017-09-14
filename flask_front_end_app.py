@@ -6,7 +6,7 @@ app = Flask(__name__, static_url_path='')
 
 # get root
 @app.route("/")
-def home():
+def landing():
     return app.make_response(open('app/home.html').read())
 
 # get sub-sites
