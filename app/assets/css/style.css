@@ -85,7 +85,7 @@ body {
 }
 
 a {
-    color: yellowgreen;
+    color: royalblue;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -93,7 +93,7 @@ a {
 
 a:hover,
 a:focus {
-    color: forestgreen;
+    color: navy;
 }
 
 p {
