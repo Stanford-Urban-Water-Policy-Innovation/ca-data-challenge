@@ -18,6 +18,32 @@
 
 		<!-- css for site (comes after all of the other css) -->
 		<link href="assets/css/style.css" rel="stylesheet">
+	
+<style type="text/css">
+	.axis path,
+	.axis line {
+	  fill: none;
+	  stroke: #000;
+	  shape-rendering: crispEdges;
+	  opacity: 1;
+	}
+
+	.axis text { font-size:10px; }
+
+	body { font: 12px sans-serif; }
+	.circles { opacity: .5; }
+
+	.tipsy { font-size:11px; margin-top:-10px;}
+
+	.guide line {
+	  fill: none;
+	  stroke: #000;
+	  shape-rendering: crispEdges;
+	  opacity: 0;
+	}
+</style>
+
+
 </head>
 <body>
 	<!-- begin wrap -->		
@@ -49,7 +75,7 @@
                 </button>
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right"> 
                     <li class="active">
                         <a href="home.html">Home</a>
                     </li>
@@ -67,7 +93,7 @@
 							<a href="southlahontan.html">South Lahontan</a>
 							<a href="coloradoriver.html">Colorado River</a>																																																
 						</ul>
-					</li>                                     
+					</li>                                                     
                     <li class="active">
                         <a href="statewide2.html">Statewide water use</a>
                     </li>                                      
@@ -79,11 +105,11 @@
                     </li>                    
                     <li class="active">
                         <a href="media.html">Media and the drought</a>
-                    </li>	
+                    </li>
                     <li class="active">
                         <a href="index.html">About</a>
-                    </li>                     				
-				</ul>
+                    </li>                    					                  
+                </ul>     
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
     </nav>
@@ -112,58 +138,42 @@
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 
-
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-					<!-- begin section: Media c3js -->
-
+					<!-- begin section: 2015 vs mandate c3js -->
 					<div class="col-xs-12 col-md-12">
 						<hr>
-						<p>Many factors played a role on how California water utilities and consumers responded to the drought. One important, and often overlooked factor, is how political action and high media coverage during this critical period has impacted individual behaviors.</p>
-						<p>Click through the interactive stories below to learn more about the relationship between political action, media and public interest during the California drought.</p>
+						<h3>
+							How well did California utilities do in summer 2015 compared to their mandated conservation targets?
+						</h3>
+						<p>
+							In 2015, Governor Jerry Brown mandated the first-ever water use restrictions for the state. The collective goal was to achieve statewide water savings amounting to 25% with respect to water use in 2013. Each utility was assigned a specific conservation target between 4% to 36% depending on their starting residential water use per capita. This visualization investigates if agencies achieved those goals. 
+						</p>
+						<p>
+							As the plot shows, many utilities with low conservation mandates were able to achieve and even surpass their goals, while some agencies with higher mandates were not able to meet them.
+						</p>
 						<br>
-						<h3> There is a correlation between public interest in the drought and conservation levels achieved in the state </h3>
 						<br>
-					</div>
-					<div class="container-fluid" style="margin-top:10px;">
-  						<div class="row">
-    					<div class="col-md-8">
-      						<div id="google_chart"></div>
-    					</div>
-    					<div class="col-md-4 well pull-right">
-      						<h2>Measuring public interest through Google Searches</h2>
-      						<hr>
-      						<p id="message4"></p>
-      						<button id="start_btn2" class="btn btn-primary pull-right">Start</button>
-    					</div>
-  					</div>
-  					<br>
-					<div class="container-fluid" style="margin-top:10px;">
-					<h3> Media coverage played an important role in driving behavioral changes, by educating the public and raising awareness of critical conditions even before mandates were in place </h3>
-					<br>
-  						<div class="row">
-    					<div class="col-md-8">
-      						<div id="media_chart"></div>
-    					</div>
-    					<div class="col-md-4 well pull-right">
-      						<h2>News Media Coverage and Public interest</h2>
-      						<hr>
-      						<p id="message3"></p>
-      						<button id="start_btn1" class="btn btn-primary pull-right">Start</button>
-    					</div>
-  					</div>
-  					<p>
-  					*Data on media coverage was obtained using the open-source algorithm <a href="https://github.com/Stanford-Urban-Water-Policy-Innovation/Articulate"><i>Articulate</i></a>, developed by the Urban Water Policy and Innovation team at Stanford University. 
-  					</p>  						
-  						
-  						
-  						<hr>
+						
+						<div class="container-fluid" style="margin-top:10px;">
+  							<div class="row">
+    							<div class="col-md-8">
+      								<div id="chart11"></div>
+    							</div>
+    							<div class="col-md-4 well pull-right">
+      								<p id="message1"></p>
+ 							 	</div>
+							</div>
+						<br>
+						<p>
+							*Both the conservation mandates and conservation levels in 2015 are computed with respect to 2013 baseline water production.
+						</p>						
+						<hr>
 					</div>
 
 
-					<!-- end section: California dcjs -->
+					<!-- end section: 2015 vs mandate c3js -->
 					<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-
-
+					
 
 				</div>
 				<!-- end row -->
@@ -203,19 +213,30 @@
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
 			<script src="https://cdn.rawgit.com/c3js/c3/master/c3.min.js"></script>
 
+
+			<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+  			<script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="assets/js/jquery.tipsy.js" type="text/javascript" charset="utf-8"></script>
+			
+			
 			<!-- DCJS (depends on D3 and Crossfilter being loaded first)  -->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/dc/1.7.5/dc.min.js"></script>
 
 			<!-- Utility Libraries (no dependencies) -->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+		
 
 		<!-- Visualization Libraries - End -->
 
     	<!-- CA DCJS Visualization - Start -->
-    	<script src="assets/js/media_visualization/media_main_v5.js"></script>
-    	<script src="assets/js/media_visualization/google_v4.js"></script>    	
+    	<script src="assets/js/ca_visualization/ca_main.js"></script>
     	<!-- CA DCJS Visualization - End -->
+    	
+    	<!-- Mandate C3JS Visualization - Start -->
+    	<script src="assets/js/mandate_comparison/mandate_chart.js"></script>
+    	<!-- Mandate C3JS Visualization - End -->    	
+
     	
 
     <!-- end section: JS Libraries -->
@@ -226,5 +247,3 @@
 
 </body>
 </html>
-
-
