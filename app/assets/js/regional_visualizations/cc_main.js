@@ -1,4 +1,4 @@
-d3.json("https://api.myjson.com/bins/1fgqb", function(remote_json){
+d3.json("https://api.myjson.com/bins/mb1e3", function(remote_json){
 
   window.remote_json = remote_json;
   
@@ -7,7 +7,7 @@ d3.json("https://api.myjson.com/bins/1fgqb", function(remote_json){
   
   // dimensions
   var supplier = cf.dimension(function(d){return d.supplier_name; });
- 	var mandate = cf.dimension(function(d){return Math.ceil(d.mandate/5)*5; });
+ 	var mandate = cf.dimension(function(d){return Math.floor(d.mandate/5)*5; });
   var date = cf.dimension(function(d){return d.date; });
   var water_days = cf.dimension(function(d){return d.water_days; });
   var rebound = cf.dimension(function(d){return d.backslide; });

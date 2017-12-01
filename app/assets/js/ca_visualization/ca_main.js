@@ -2,7 +2,8 @@
 // ------------------------------------------------------------------
 // load data
 
-d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
+//d3.json("https://api.myjson.com/bins/3fizm", function(remote_json){
+d3.json("https://api.myjson.com/bins/sikgj", function(remote_json){
 	
   window.remote_json = remote_json;
   
